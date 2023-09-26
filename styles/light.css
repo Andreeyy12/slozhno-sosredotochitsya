@@ -2,11 +2,189 @@
   Специально для светлой темы при наличии класса.
   Здесь окажутся стили, которые нужно переопределить принудительно,
   переключая тему
-*/
+
+
+  ЗДЕСЬ НУЖНО ПЕРЕДЕЛАТЬ ДЕФОЛТ ДЛЯ ДЕНЬ*/
 
 .page.theme_light {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+  background-image: url(/images/cover-image-light.png);
+  --background-color: #353430;
+  --header-title: #FFC2E6;
+  --accent-color: #FF8DCB;
+  --title-color: #353430;
+  --text-on-background-color: #353430;
+  --text-color: #353430;
+  --text-title: #FFC2E6;
+  --text-shadow: #FF0070;
+  --text-color-container: #353430;
+  --hover-border: #323112;
 }
+
+@media (prefers-color-scheme: light) {
+  :root.theme_light {
+    --main-font-family: 'IBM Plex Mono', monospace;
+    --background-color: #353430;
+    --accent-color: #FF8DCB;
+    --title-color: #353430;
+    --text-on-background-color: #000028;
+    --text-color: #353430;
+    --text-title: #FFC2E6;
+    --text-shadow: #FF0070;
+    --text-color-container:#353430;
+  }
+
+  .header__rec {
+    display: none;
+  }}
+
+.theme_light .header__rec {
+  display: none;
+}
+
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-top: 1px solid var(--background-color);
+  border-right: 1px solid var(--background-color);
+  inset-block-start: 0;
+  inset-block-end: 0;
+  left: 979px;
+  top: 20px;
+}
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-left: 1px solid var(--background-color);
+  border-bottom: 1px solid var(--background-color);
+  inset-block-start: 0;
+  inset-block-end: 0;
+  margin-block-start: 723px;
+}
+
+@media screen and (max-width: 768px) {
+  .decorated-zone::before {
+    left: 723px;
+    top: 20px;
+  }
+
+  .decorated-zone::after {
+    margin-block-start: 978px;
+  }}
+
+@media screen and (max-width: 375px) {
+  .decorated-zone::before {
+    left: 340px;
+    top: 10px;
+  }
+
+  .decorated-zone::after {
+    margin-block-start: 633px;
+}}
+
+.header__theme-menu-item {
+  color: var(--text-color);
+  text-align: center;
+  font-family: var(--main-font-family);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--hover-border);
+  cursor: pointer;
+}
+
+.header__theme-menu-button:focus-visible {
+  outline: none;
+  border-bottom: 1px solid var(--hover-border);
+}
+
+.title-text {
+  max-width: 759px;
+  color: var(--header-title);
+  text-shadow: 4px 4px 0px var(--text-shadow);
+  font-family: var(--main-font-family);
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 82.5%;  
+  margin-left: -20px;
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    gap: 162px;
+    margin-block-start: 175px;
+    margin-block-end: 243px;
+  }
+  .title-description {
+    align-self: center;
+  }}
+
+@media screen and (max-width: 375px) {
+  .title {
+    gap: 55px;
+    margin-block-start: 69px;
+    margin-block-end: 96px;
+  }
+
+  .title-text {
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    margin-left: 0;
+  }}
+
+.title-description {
+  position: relative;
+  align-self: flex-end;
+  max-width: 50%;
+  color: var(--text-on-background-color);
+  font-family: var(--main-font-family);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23.4px;  
+}
+
+@media screen and (max-width: 375px) {
+  .title-description {
+    max-width: 100%;
+  }}
+
+.container-description {
+  color: var(--text-color-container);
+  font-family: var(--main-font-family);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23.4px;  
+  padding-top: 10px;
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 0px var(--accent-color);
+}
+
+.text-shadow:hover {
+  border-bottom: 1px solid var(--text-color);
+  cursor: pointer; 
+}
+
+.footer-title {
+  max-width: 759px;
+  color: var(--header-title);
+  text-shadow: 2px 2px 0px var(--text-shadow);
+  font-family: var(--main-font-family);
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 82.5%; 
+  margin: auto;
+}
+
