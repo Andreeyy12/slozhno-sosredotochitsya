@@ -8,6 +8,12 @@
 
 .page.theme_light {
   background-image: url(/images/cover-image-light.png);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  max-width: 100%;
+  height: 100vb;
   --background-color: #353430;
   --header-title: #FFC2E6;
   --accent-color: #FF8DCB;
@@ -33,11 +39,11 @@
     --text-color-container:#353430;
   }
 
-  .header__rec {
+  .header-rec {
     display: none;
   }}
 
-.theme_light .header__rec {
+.theme_light .header-rec {
   display: none;
 }
 
@@ -48,10 +54,6 @@
   height: 25px;
   border-top: 1px solid var(--background-color);
   border-right: 1px solid var(--background-color);
-  inset-block-start: 0;
-  inset-block-end: 0;
-  left: 979px;
-  top: 20px;
 }
 
 .decorated-zone::after {
@@ -61,30 +63,7 @@
   height: 25px;
   border-left: 1px solid var(--background-color);
   border-bottom: 1px solid var(--background-color);
-  inset-block-start: 0;
-  inset-block-end: 0;
-  margin-block-start: 723px;
 }
-
-@media screen and (max-width: 768px) {
-  .decorated-zone::before {
-    left: 723px;
-    top: 20px;
-  }
-
-  .decorated-zone::after {
-    margin-block-start: 978px;
-  }}
-
-@media screen and (max-width: 375px) {
-  .decorated-zone::before {
-    left: 340px;
-    top: 10px;
-  }
-
-  .decorated-zone::after {
-    margin-block-start: 633px;
-}}
 
 .header__theme-menu-item {
   color: var(--text-color);
@@ -107,18 +86,15 @@
 }
 
 .title-text {
-  max-width: 759px;
   color: var(--header-title);
   text-shadow: 4px 4px 0px var(--text-shadow);
   font-family: var(--main-font-family);
-  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   font-style: normal;
   font-weight: 700;
   line-height: 82.5%;  
-  margin-left: -20px;
 }
 
-@media screen and (max-width: 768px) {
+/*@media screen and (max-width: 768px) {
   .title {
     gap: 162px;
     margin-block-start: 175px;
@@ -138,7 +114,7 @@
   .title-text {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
     margin-left: 0;
-  }}
+  }}*/
 
 .title-description {
   position: relative;
@@ -177,11 +153,9 @@
 }
 
 .footer-title {
-  max-width: 759px;
   color: var(--header-title);
   text-shadow: 2px 2px 0px var(--text-shadow);
   font-family: var(--main-font-family);
-  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   font-style: normal;
   font-weight: 700;
   line-height: 82.5%; 
